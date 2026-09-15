@@ -1,0 +1,98 @@
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/huajh/awesome-latex-cv
+%
+% Author:
+% Junhao Hua
+
+
+%Section: Work Experience at the top
+\sectionTitle{Projects \& Experiences}{\faCode}
+ 
+\begin{experiences}
+
+  \experience
+  {Dec 2024} {\emph{PSMGD : Periodic Stochastic Multi-Gradient Descent for Fast Multi-Objective Optimization}}{RIT}{Python/PyTorch}
+  {Jan 2024}    {
+\begin{itemize}
+    \item \textbf{Algorithm Design and Development:} Contributed to the design and implementation of the Periodic Stochastic Multi-Gradient Descent (PSMGD) algorithm, which addresses key challenges in multi-objective optimization (MOO) by periodically recalculating and reusing dynamic weights. This innovative approach significantly reduces computational overhead and accelerates MOO training. Developed and optimized core algorithm components to enhance gradient manipulation and ensure efficient backpropagation, improving overall performance in complex optimization tasks.
+
+    \item \textbf{Experimental Evaluation:} Led comprehensive experimental evaluations across benchmark datasets, including QM-9, CelebA, and NYU-v2, to assess the performance of PSMGD relative to state-of-the-art MOO algorithms. Conducted in-depth analysis using key performance metrics such as per-task performance drop, mean rank, and convergence speed. The results demonstrated that PSMGD not only matches but also outperforms existing methods while delivering significant reductions in training time.
+
+    \item \textbf{Paper Writing and Revision:} Contributed to the writing, structuring, and revision of the manuscript, articulating the experimental results and potential avenues for future research. Collaborated closely with co-authors to refine the paper’s structure, ensure clarity, and incorporate feedback from reviewers, leading to an accepted and well-received publication.
+
+    \item \textbf{Results and Impact:} Successfully demonstrated that PSMGD outperforms existing MOO methods in both performance and computational efficiency. The algorithm achieved faster convergence rates, especially in high-dimensional multi-task learning scenarios, marking a significant advancement in MOO techniques and offering substantial benefits for real-world machine learning applications.
+    \item \faGithub~\href{https://github.com/MarcuXu/PSMG}{GitHub Repository: Periodic Stochastic Multi-Gradient Descent}
+\end{itemize}
+
+				  }
+				  {PSMGD, MOO, Gradient Manipulation, Computational Efficiency, Convergence Rate}
+  \emptySeparator	
+                  
+  \experience
+  {Jul 2021} {The NICT 2021 Embedded Dev \& AI Summer School}{Garbage Classification Device}{C/Python}
+ %  {}    {\begin{itemize}
+	% \item Based on the online garbage dataset, applied TF2 to get and expand images' features, set the parameters such as structure, optimizer, etc. Then instantiated the model for training. Checked the model's accuracy by Matplotlib, and saved the model as an h5 or tflite file.
+	% \item Took {\link{https://github.com/RT-Thread/RT-AK}{AI-Tool}} to load the file and related configuration to {\link{https://art-pi.gitee.io/website/}{ART-Pi}}, and designed the driver codes under \link{https://github.com/RT-Thread/rt-thread}{RT-Thread}. After initializing the screen, camera, and so on, implemented the bilinear interpolation to convert captured images to three-channel data for fitting the model's input. And relying on the predicted, there would be corresponding reactions on the ART-Pi.
+	% \item \faGithub: \link{https://github.com/MarcuXu/Garbage-Classification-Device} {github.com/MarcuXu/Garbage-Classification-Device}
+	% 			  \end{itemize}
+	% }
+ %    {Classification, TensorFlow, ART-Pi, RT-Thread}
+  {}    {\begin{itemize}
+    \item Utilized an online garbage dataset and applied TensorFlow 2 to extract and augment image features. Configured model parameters, including architecture and optimizer, before instantiating and training the model. Evaluated accuracy using Matplotlib and saved the trained model in H5 or TFLite format.
+    \item Employed \href{https://github.com/RT-Thread/RT-AK}{RT-AK AI-Tool} to load the model file and related configurations onto the \href{https://art-pi.gitee.io/website/}{ART-Pi} platform. Developed driver code under \href{https://github.com/RT-Thread/rt-thread}{RT-Thread}, initializing peripherals such as the screen and camera. Implemented bilinear interpolation to convert captured images into three-channel data, ensuring compatibility with the model's input. Based on predictions, triggered appropriate responses on the ART-Pi.
+    \item \faGithub~\href{https://github.com/MarcuXu/Garbage-Classification-Device}{GitHub Repository: Garbage Classification Device}
+\end{itemize}
+	}
+    {Classification, TensorFlow 2, ART-Pi, RT-Thread}
+
+
+  \emptySeparator
+				  
+\experience
+  {Jun 2021} {Intern$\backslash$Design Engineer (Embedded SDE)}{Jabil Circuit (Shanghai) Co., Ltd}{Wireless R\&D}
+  {Mar 2019}    {
+\begin{itemize}
+    \item Evaluated and selected appropriate microcontrollers (MCUs) for projects, integrating them into system designs; assisted hardware engineers in testing temperature-controlled modules using an Arduino Uno R3, including the TI LMP92066 DAC.
+    \item Interpreted circuit schematics and operated lab equipment; contributed to Board Support Package (BSP) development and interfaced with low-level MCU protocols, including I2C, SPI, UART, and DMA.
+    \item Implemented a C library to decode the NMEA (GPS) data format; developed embedded applications on the RT-Thread; interfaced with peripheral modules like the HC-02 Bluetooth transceiver and the L80 GPS receiver.
+    \item Developed a Python script to convert Vivado waveform database (WDB) files into standard VCD format, enabling detailed analysis of signal timing and values at each clock edge.
+    \item Developed device drivers for a Remote Radio Unit (RRU), including the CAT24M01 EEPROM and LM5064 power controller; integrated these drivers into the hardware abstraction layer (HAL).
+    \item Tested and validated the Processing System (PS) and Programmable Logic (PL) subsystems of a Xilinx Zynq SoC using the Vivado toolchain; automated bootloader loading and system initialization using XSCT (Xilinx Software Command-line Tool) and custom TCL scripts.
+\end{itemize}
+				  }
+				  {MCU, Device Driver Development, BSP, Vivado, RRU, Embedded Systems}
+
+
+  % \emptySeparator
+  
+ %  \experience
+ %    {Jul 2018} {The TI Cup Undergraduate Shanghai Electronics Design Contest}{SHU}{C in BSP}
+ %    {}    {
+ %                      \begin{itemize}
+ %                        \item Led the team to design the Loop Current Signal Detection Device, which took STM32F1.
+ %                        \item Assisted the selection of MCU and hardware components; responsible for applying RT-Thread to the MCU and the driver design of interaction functions, including the keypad, LCD and touchscreen, etc.
+ %                        \item Responsible for the report writing, on-site installation, and demonstration of the competition work, answered the questions about system design from the judges.
+ %                        % \item \faGithub: \link{https://github.com/huajh/action_recognition} {github.com/huajh/action\_recognition}                                                                                          
+ %                      \end{itemize}
+ %                    }
+ %                    {Loop Current Signal Detection Device, STM32F1, RTOS, Driver design}
+
+ % \emptySeparator
+ 
+ % \experience
+ %    {May 2018}   {The Service Robot Special Competition of 2018 China Robot Competition}{SHU}{C/Python}
+ %        {}     {
+ %                      \begin{itemize}
+ %                        \item Led the team and helped to design a WeChat mini program to control the smart car.
+ %                        \item Based on MSP432, applied Bluetooth synchronization (latency < 0.1s) and MQTT (latency < 0.3s) to control the car and receive its real-time feedback and realized auto-tracking by OpenMV.                  
+ %                        \item Analyzed the competition topic with teammates, learned and selected modules such as camera, motors, etc.; developed the communication protocol with the host unit and assisted in debugging it.
+                        
+ %                        \item Responsible for the software design of MCU and took FreeRTOS as a framework to drive sensors.                                                                                    
+ %                      \end{itemize}
+ %                    }
+ %                    {OpenMV, WeChat mini program, Auto-tracking, Bluetooth}
+
+		
+\end{experiences}
