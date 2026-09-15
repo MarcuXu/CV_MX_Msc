@@ -1,0 +1,9 @@
+# LaTeX intermediates
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+# Local PDF previews and comparison builds
+/tmp/

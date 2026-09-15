@@ -1,46 +1,59 @@
-% !TEX TS-program = luatex
-% Awesome CV LaTeX Template
- 
+% !TEX TS-program = lualatex
+% Academic CV based on the Awesome Source CV template; see LICENSE and README.md.
+\documentclass[localFont]{awesome-source-cv}
 
-\documentclass[localFont]{awesome-source-cv} %alternative
+\hypersetup{
+  pdftitle={Mingjing (Marcus) Xu - Academic CV},
+  pdfauthor={Mingjing Xu},
+  pdfsubject={Machine learning research, education, and publications},
+  pdflang={en-GB}
+}
 
-\name{}{Mingjing (Marcus) Xu}
-\tagline{B.Eng. @ SHU; M.Sc. @ CUHK; Ph.D. student @ Swansea Uni}
-% \tagline{B.Eng. in EE @ SHU; M.Sc. in EE @ CUHK; Ph.D. student @ Swansea Uni}
-% \tagline{Machine Learning Engineer}
-\photo{2.5cm}{PP2}
-\socialinfo{
-	\homepage{https://marcuxu.com/}
-	\github{MarcuXu}
-	% \weibo{huajh7}
-	\linkedin{xumingjing} \\
-	\smartphone{+44 07344370200}
-	\email{mingjing.xu@swansea.ac.uk}
-% 	\email{mingjing.xu@hotmail.com} \emailO{mingjing.xu@link.cuhk.edu.hk}
-% 	\address{No.38 Zheda Road, Xihu District, Hangzhou, Zhejiang, China}\\
-% 	\infos{Feb 1991, Longyou, Zhejiang, China}
+\newcommand{\cvheading}[3]{%
+  \par\addvspace{2pt}\Needspace{4\baselineskip}%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+    \textbf{#1} & {\small\color{darkGrey}#2} \\
+    \multicolumn{2}{@{}l@{}}{\small\textit{#3}}
+  \end{tabularx}\par\nopagebreak
+}
+
+% One institution/date line and one detail line per education entry.
+\newcommand{\educationentry}[3]{%
+  \textbf{#1} & {\small\color{darkGrey}#2} \\
+  \multicolumn{2}{@{}l@{}}{\small #3}%
+}
+
+% The label links to its ranking source; editions are documented in README.md.
+\newcommand{\venuerank}[2]{%
+  \nobreak\hspace{0.4em}\href{#1}{\mbox{\small\color{accentcolor}[#2]}}%
 }
 
 \begin{document}
-	\makecvheader
+\raggedbottom
+\pagestyle{empty}
 
-	\makecvfooter
-        {}
-		% {\textsc{\selectlanguage{english}\today}} % \selectlanguage{english}\today
-		{\textit{marcuxu.com}}
-		{\thepage}
+\noindent
+\begin{minipage}[c]{\dimexpr\linewidth-3cm\relax}
+  {\fontsize{24}{27}\selectfont\bfseries\color{accentcolor} Mingjing (Marcus) Xu}\par
+  {\large Ph.D. Student \enspace\textcolor{darkGrey}{|}\enspace Swansea University}\par
+  {\small
+    \href{mailto:mingjing.xu@swansea.ac.uk}{mingjing.xu@swansea.ac.uk}
+    \enspace\textcolor{darkGrey}{|}\enspace +44 7344 370200\par
+    \href{https://marcuxu.com/}{\textcolor{accentcolor}{marcuxu.com}}
+    \enspace\textcolor{darkGrey}{|}\enspace
+    \href{https://github.com/MarcuXu}{\textcolor{accentcolor}{GitHub: MarcuXu}}
+    \enspace\textcolor{darkGrey}{|}\enspace
+    \href{https://www.linkedin.com/in/xumingjing}{\textcolor{accentcolor}{LinkedIn: xumingjing}}
+  }
+\end{minipage}\hfill
+\begin{minipage}[c]{2.65cm}
+  \includegraphics[width=\linewidth]{PP2.jpg}
+\end{minipage}\par\vspace{3pt}
 
-	\input{section_headline}
-	\input{section_education}				% Section education	
-	% \input{section_awards}					% Section Awards
-  	\input{section_publications}			% Section Publications
-	\input{section_experience_short}		% Section experiences
-	\input{section_awards}					% Section Awards
-	\input{section_skills}					% Section Skill
-	% \input{section_publications}			% Section Publications
-% 	\input{section_languages}			    % Section languages
-% 	\input{section_interests}				% Section Interests
- 	%\input{section_references} 				% Section References
-% 	\noindent \\		
-% 	(last update: 13 Apr. 2017)
+\input{section_headline}
+\input{section_education}
+\input{section_publications}
+\input{section_skills}
+\input{section_experience_short}
+\input{section_awards}
 \end{document}

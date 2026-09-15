@@ -20,7 +20,7 @@
 \ProvidesClass{awesome-source-cv}[2016/11/05 v1.6.1 Awesome Source CV Class]
 
 
-\LoadClass[a4paper]{article}
+\LoadClass[a4paper,10pt]{article}
 
 \DeclareOption{green}{
   \def\@green{green}
@@ -49,17 +49,18 @@
 
 % Dependences
 %A Few Useful Packages
-\RequirePackage[english,french]{babel}
-\RequirePackage[utf8]{luainputenc}
+\RequirePackage[english]{babel}
 \RequirePackage{fontspec} 					                 % for loading fonts
 \RequirePackage{url,parskip} 	    % other packages for formatting
-\RequirePackage[usenames,dvipsnames]{xcolor}
-\RequirePackage{fullpage}
-\RequirePackage[margin=1.5cm]{geometry}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[margin=1.35cm,footskip=0.65cm]{geometry}
+\RequirePackage{graphicx}
 \RequirePackage{fontawesome}
 \RequirePackage{hyperref}\hypersetup{hidelinks}
 \RequirePackage{titlesec}
 \RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{needspace}
 \RequirePackage{enumitem}
 \RequirePackage{longtable} 	
 \RequirePackage{etoolbox}
@@ -68,9 +69,8 @@
 \RequirePackage{fancyhdr}
 
 
-\DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
-\definecolor{basecolor}{HTML}{000066}       %BLUE
+\definecolor{basecolor}{HTML}{203D59}       % Muted navy
 
 \ifundef{\@green} {
   \ifundef{\@red} {
@@ -84,10 +84,11 @@
 }
 { \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38} }
 
-\definecolor{darkGrey}{HTML}{989898}
+\definecolor{darkGrey}{HTML}{596579}
+\definecolor{rulecolor}{HTML}{CBD3DB}
 
 \colorlet{linkcolor}{basecolor}
-\colorlet{accentcolor}{linkcolor!90}
+\colorlet{accentcolor}{linkcolor}
 \colorlet{symbolcolor}{linkcolor!85}
 
 
@@ -117,11 +118,13 @@
 %\font\fb=''[cmr10]''                      % for use with \LaTeX command
 
 % Setup CV sections
-\titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{2pt}{2pt}
+\titleformat{\section}{\large\bfseries\raggedright}{}{0em}{}[{\color{rulecolor}\titlerule[0.4pt]}]
+\titlespacing{\section}{0pt}{5pt}{3pt}
 
 % Configure list
-\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em} 
+\setlist[itemize,1]{label=\textbullet, topsep=2pt, itemsep=1pt, parsep=0pt, leftmargin=1.2em, before=\raggedright}
+\setlength{\parskip}{2pt}
+\setlength{\emergencystretch}{1em}
 
 % Setup Array : new column type
 \newcolumntype{R}[1]{>{\hfill}m{#1}}
@@ -144,16 +147,17 @@
 {
   %\setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
   \setmainfont[
-    BoldFont = Source Sans Pro Semibold, 
-    ItalicFont= Source Sans Pro Light Italic,
-    SmallCapsFont = Source Sans Pro]{Source Sans Pro Light}
+    BoldFont = Source Sans Pro Semibold,
+    ItalicFont = Source Sans Pro Italic,
+    BoldItalicFont = Source Sans Pro Semibold Italic]{Source Sans Pro}
 }
 {
   \setmainfont[
-    Path = fonts/, 
+    Path = fonts/,
+    Extension = .otf,
     BoldFont = SourceSansPro-Semibold, 
-    ItalicFont = SourceSansPro-LightIt, 
-    SmallCapsFont = SourceSansPro-Regular]{SourceSansPro-Light}
+    ItalicFont = SourceSansPro-It,
+    BoldItalicFont = SourceSansPro-SemiboldIt]{SourceSansPro-Regular}
 }
 
 %New length definition
@@ -176,7 +180,7 @@
 \newcommand{\mobileSymbol}{\faMobilePhone}
 \newcommand{\githubSymbol}{\faGithub}
 
-\newcommand\link[2]{\color{linkcolor}\href{#1}{#2}\color{Black} }
+\newcommand\link[2]{\href{#1}{\textcolor{linkcolor}{#2}}}
 \newcommand\important[1]{\textbf #1}
 
 % Create a tag
@@ -230,7 +234,7 @@
 
 % Render author's homepage
 % Usage: \homepage{<homepage>}
-\newcommand*{\homepage}[1]{\sociallink{\homeSymbol}{http://#1}{#1}}
+\newcommand*{\homepage}[1]{\sociallink{\homeSymbol}{https://#1}{#1}}
 
 % Render author's homepage
 % Usage: \weibo{<weibo>}
@@ -239,7 +243,7 @@
 
 % Render author's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1}{linkedin.com/in/#1}}
+\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{https://www.linkedin.com/in/#1}{linkedin.com/in/#1}}
 
 % Render author's viadeo(optional)
 % Usage: \viadeo{<viadeo-nick>}
@@ -352,7 +356,7 @@
 }
 
 % Resume part title definition
-\newcommand\sectionTitle[2]{\section{\texorpdfstring{\color{accentcolor}#2\enspace #1}{#1}}}
+\newcommand\sectionTitle[2]{\section{\texorpdfstring{\color{accentcolor}#1}{#1}}}
 
 % Define a new column type for the scholarship environment
 \newcolumntype{Y}{>{\raggedleft}p{\leftcolumn}}
